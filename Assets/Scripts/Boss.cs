@@ -10,17 +10,7 @@ using Random = UnityEngine.Random;
 public class Boss : MonoBehaviour
 {
     [SerializeField]
-    Vector2 screenEdges;
-    [SerializeField]
-    float timeBetweenAttacks;
-    [SerializeField]
-    GameObject attackCtrl;
-    [SerializeField]
-    GameObject smashAttack;
-    [SerializeField]
-    GameObject swingAttack;
-    [SerializeField]
-    GameObject rainGenerator;
+    GameObject attackCtrl;   
     Animator anim;
 
     public bool isActive;
@@ -29,6 +19,7 @@ public class Boss : MonoBehaviour
     {
         TryGetComponent<Animator>(out anim);
         isActive = false;
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -39,13 +30,13 @@ public class Boss : MonoBehaviour
 
     public void FixedUpdate()
     {
-
     }
 
 
     public void Activate()
     {
         isActive = true;
+        attackCtrl.SetActive(true);
     }
 
     

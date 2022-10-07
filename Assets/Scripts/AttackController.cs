@@ -8,10 +8,19 @@ public class AttackController : MonoBehaviour
 {
     [SerializeField]
     GameObject player;
+    [Header("Screen Margins")]
     [SerializeField]
     Vector2 minScreenPos;
     [SerializeField]
     Vector2 maxScreenPos;
+    [SerializeField]
+    float timeBetweenAttacks;
+    [SerializeField]
+    GameObject smashAttack;
+    [SerializeField]
+    GameObject swingAttack;
+    [SerializeField]
+    GameObject rainGenerator;
     Animator anim;
     BossAttack currentAttack;
 
@@ -20,15 +29,36 @@ public class AttackController : MonoBehaviour
     private void Start()
     {
         anim = GetComponent<Animator>();
+        minScreenPos = Camera.main.ScreenToWorldPoint(new Vector3(0, 0, 0));
+        maxScreenPos = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, 0));
     }
 
     // Update is called once per frame
     public void Update()
     {
-        if (anim?.GetCurrentAnimatorStateInfo(0).length < anim?.GetCurrentAnimatorStateInfo(0).normalizedTime)
+
+    }
+
+    public void ToAnimator()
+    {
+        anim.SetInteger("CurrentAttack", currentAttack.GetAttackType());
+    }
+    public void GenerateAttack()
+    {
+        currentAttack = new BossAttack(player.transform.position, minScreenPos, maxScreenPos, smashAttack.transform.position.y, swingAttack.transform.position.x);
+        switch (currentAttack.GetAttackType())
         {
-            currentAttack = new BossAttack(player.transform.position, minScreenPos, maxScreenPos);
+            case 0:
+                smashAttack.transform.position = currentAttack.GetPos();
+                break;
+            case 1:
+                swingAttack.transform.position = currentAttack.GetPos();
+                break;
+            case 3:
+                rainGenerator.transform.position = currentAttack.GetPos();
+                break;
         }
+        ToAnimator();
     }
     private class BossAttack
     {
@@ -37,12 +67,18 @@ public class AttackController : MonoBehaviour
         Vector2 pos { get; set; }
         Vector2 minScreenPos;
         Vector2 maxScreenPos;
-        public BossAttack(Vector2 _pos, Vector2 _minScreenPos, Vector2 _maxScreenPos)
+        float smashFixedY;
+        float swingFixedX;
+        public BossAttack(Vector2 _pos, Vector2 _minScreenPos, Vector2 _maxScreenPos, float _smashFixedY, float _swingFixedX)
         {
             minScreenPos = _minScreenPos;
             maxScreenPos = _maxScreenPos;
+            int aux = UnityEngine.Random.Range(0, 3);
             at = (AttackType)Enum.GetValues(typeof(AttackType)).GetValue(UnityEngine.Random.Range(0, 3));
             pos = _pos;
+            smashFixedY = _smashFixedY;
+            swingFixedX = _swingFixedX;
+            RandomPos();
         }
 
         public void RandomPos()
@@ -50,22 +86,41 @@ public class AttackController : MonoBehaviour
             switch (at)
             {
                 case AttackType.Smash:
-                    pos = new Vector2(maxScreenPos.y + 1, pos.x + UnityEngine.Random.Range(-1, 2));
+                    pos = new Vector2(pos.x + UnityEngine.Random.Range(-1, 2), smashFixedY);
+                    if (pos.x < minScreenPos.x)
+                    {
+                        pos = new Vector2(minScreenPos.x, smashFixedY);
+                    }
+                    if (pos.x > maxScreenPos.x)
+                    {
+                        pos = new Vector2(maxScreenPos.x, smashFixedY);
+                    }
                     break;
                 case AttackType.Swing:
-                    pos = new Vector2(maxScreenPos.x + 1, UnityEngine.Random.Range(-1, 2));
+                    pos = new Vector2(swingFixedX, pos.y + UnityEngine.Random.Range(-1, 2));
+                    Debug.Log("Pre ajuste:" + " " + pos.y);
+                    if (pos.y < minScreenPos.y + 2)
+                    {
+                        pos = new Vector2(swingFixedX, minScreenPos.y + 2);
+                    }
+                    if (pos.y > maxScreenPos.y)
+                    {
+                        pos = new Vector2(swingFixedX, maxScreenPos.y);
+                    }
+                    Debug.Log("Post ajuste:" + " " + pos.y);
                     break;
                 case AttackType.Rain:
                     pos = Vector2.zero;
                     break;
             }
-
         }
         public int GetAttackType()
         {
             return Convert.ToInt32(at);
         }
-
-
+        public Vector2 GetPos()
+        {
+            return pos;
+        }
     }
 }

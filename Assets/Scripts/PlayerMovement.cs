@@ -9,6 +9,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     float maxSpeed;
     [SerializeField]
+    float fallingSpeedMod;
+    [SerializeField]
     float jumpForce;
     [SerializeField]
     float decelSpeed;
@@ -22,7 +24,7 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        body = GetComponent<Rigidbody2D>();
+        body = GetComponent<Rigidbody2D>();;
     }
 
     // Update is called once per frame
@@ -57,7 +59,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Move()
     {
-        if (movementInput.x == 0)
+        if (movementInput.x == 0 && grChecker.IsOnGround())
         {
             body.velocity = new Vector2(Mathf.Lerp(body.velocity.x, 0, decelSpeed * Time.deltaTime), body.velocity.y);
         }
@@ -70,7 +72,13 @@ public class PlayerMovement : MonoBehaviour
                 body.velocity = new Vector2(maxSpeed * movSign, body.velocity.y);
             }
         }
-
+        if (!grChecker.IsOnGround() && body.velocity.y <= 0)
+        {
+            body.velocity=new Vector2(body.velocity.x,body.velocity.y - fallingSpeedMod);
+        }
+        else
+        {
+        }
 
     }
     private void Jump()
