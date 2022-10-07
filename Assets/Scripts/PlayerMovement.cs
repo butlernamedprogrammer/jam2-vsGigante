@@ -4,36 +4,81 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    Vector2 movementInput;
+    [SerializeField]
     float movementSpeed;
-    Rigidbody2D body;
-    bool eatingRange;
+    [SerializeField]
+    float maxSpeed;
+    [SerializeField]
+    float jumpForce;
+    [SerializeField]
+    float decelSpeed;
+    [SerializeField]
+    GroundChecker grChecker;
+    private Vector2 movementInput;
+    private Rigidbody2D body;
+    public bool eatingRange;
+    public bool isEating;
+    private bool wantsToJump;
     // Start is called before the first frame update
     void Start()
     {
+        body = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         movementInput = new Vector2(Input.GetAxis("Horizontal"), 0);
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            wantsToJump = true;
+        }
+        Eat();
+
     }
 
     private void FixedUpdate()
     {
         Move();
+        Jump();
     }
 
     private void Eat()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && eatingRange)
+        if (!Input.GetKeyDown(KeyCode.Space))
         {
-
+            isEating = false;
+        }
+        else if (Input.GetKeyDown(KeyCode.Space) && eatingRange)
+        {
+            isEating = true;
         }
     }
 
     private void Move()
     {
-        body.AddForce(movementInput * movementSpeed, ForceMode2D.Force);
+        if (movementInput.x == 0)
+        {
+            body.velocity = new Vector2(Mathf.Lerp(body.velocity.x, 0, decelSpeed * Time.deltaTime), body.velocity.y);
+        }
+        else
+        {
+            body.AddForce(movementInput * movementSpeed, ForceMode2D.Force);
+            if (Mathf.Abs(body.velocity.x) > maxSpeed)
+            {
+                float movSign = body.velocity.x / Mathf.Abs(body.velocity.x);
+                body.velocity = new Vector2(maxSpeed * movSign, body.velocity.y);
+            }
+        }
+
+
+    }
+    private void Jump()
+    {
+        if (wantsToJump && grChecker.IsOnGround())
+        {
+            body.AddForce(jumpForce * Vector2.up, ForceMode2D.Impulse);
+            wantsToJump = false;
+        }
     }
 }
