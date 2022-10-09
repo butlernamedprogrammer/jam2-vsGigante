@@ -374,7 +374,7 @@ GameObject:
   - component: {fileID: 209353378}
   - component: {fileID: 209353377}
   m_Layer: 0
-  m_Name: RainGenerator
+  m_Name: BulletSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -797,7 +797,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 4, z: -10}
+  m_LocalPosition: {x: 0, y: 4.5, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -982,8 +982,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4045c60b942f9c54faaf191034fc7d70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 4536672540698325697, guid: d4e3d081e6baadf4ab30412ca51505ed, type: 3}
-  bulletSpeed: 60
+  bullet: {fileID: 4536672540698325697, guid: 80322b269eb8d3341b17b8543f0a8eca, type: 3}
+  bulletSpeed: 400
 --- !u!1 &824948691
 GameObject:
   m_ObjectHideFlags: 0
@@ -1072,13 +1072,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ec479f8b40f8d043a6c2d28c4376698, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletSpeed: 12
+  bulletSpeed: 60
+  bulletSpawner: {fileID: 209353376}
   spawningGameobject:
   - {fileID: 4536672540698325697, guid: d4e3d081e6baadf4ab30412ca51505ed, type: 3}
   currentProjectile: 0
   circleRadius: 6
   currentType: 0
-  spawnPoint: 1
+  spawnPoint: 0
   player: {fileID: 1567641175}
 --- !u!1 &1226058672
 GameObject:
@@ -1123,7 +1124,7 @@ GameObject:
   - component: {fileID: 1320006285}
   - component: {fileID: 1320006284}
   - component: {fileID: 1320006283}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BossSquare
   m_TagString: Boss
   m_Icon: {fileID: 0}
@@ -1257,9 +1258,10 @@ GameObject:
   - component: {fileID: 1567641180}
   - component: {fileID: 1567641179}
   - component: {fileID: 1567641176}
+  - component: {fileID: 1567641181}
   m_Layer: 3
   m_Name: PlayerSquare
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1345,7 +1347,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1567641175}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 4.1, z: 0}
+  m_LocalPosition: {x: 0.5, y: 4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1401,6 +1403,26 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!95 &1567641181
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1567641175}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2112014061
 GameObject:
   m_ObjectHideFlags: 0

@@ -20,7 +20,7 @@ public class AttackController : MonoBehaviour
     [SerializeField]
     GameObject swingAttack;
     [SerializeField]
-    GameObject rainGenerator;
+    ProjectileGenerator projectileGenerator;
     Animator anim;
     BossAttack currentAttack;
 
@@ -55,7 +55,7 @@ public class AttackController : MonoBehaviour
                 swingAttack.transform.position = currentAttack.GetPos();
                 break;
             case 3:
-                rainGenerator.transform.position = currentAttack.GetPos();
+
                 break;
         }
         ToAnimator();
@@ -98,7 +98,6 @@ public class AttackController : MonoBehaviour
                     break;
                 case AttackType.Swing:
                     pos = new Vector2(swingFixedX, pos.y + UnityEngine.Random.Range(-1, 2));
-                    Debug.Log("Pre ajuste:" + " " + pos.y);
                     if (pos.y < minScreenPos.y + 2)
                     {
                         pos = new Vector2(swingFixedX, minScreenPos.y + 2);
@@ -107,7 +106,6 @@ public class AttackController : MonoBehaviour
                     {
                         pos = new Vector2(swingFixedX, maxScreenPos.y);
                     }
-                    Debug.Log("Post ajuste:" + " " + pos.y);
                     break;
                 case AttackType.Rain:
                     pos = Vector2.zero;
