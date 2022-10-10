@@ -79,8 +79,6 @@ public class PlayerMovement : MonoBehaviour
                 body.velocity = new Vector2(maxSpeed * movSign, body.velocity.y);
             }
         }
-
-
     }
     private void Jump()
     {
