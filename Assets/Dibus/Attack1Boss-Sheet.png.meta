@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 156b7dcc1fb8f6a48875e6781c66928d
+guid: 7412147956594c14d8557091230c4be1
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 64
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -70,7 +70,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -105,169 +105,169 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Idle-Sheet_0
+      name: Attack1Boss-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
-        height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 10c59f8f30b488b4f97b770d75016cba
-      internalID: -762278078
+      spriteID: 04ce6d4aa563bcf46a38d526ff98b67d
+      internalID: -292591205
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle-Sheet_1
+      name: Attack1Boss-Sheet_1
       rect:
         serializedVersion: 2
-        x: 32
+        x: 48
         y: 0
-        width: 32
-        height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 34fe70e56d307174da64d1efb42a0ad6
-      internalID: -618698661
+      spriteID: c27dc2b457813b44b842c43007534cb7
+      internalID: 1430547414
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle-Sheet_2
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 32
-        height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 52fd229da4dea16438fab6267a2d4b70
-      internalID: -1553328485
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Idle-Sheet_3
+      name: Attack1Boss-Sheet_2
       rect:
         serializedVersion: 2
         x: 96
         y: 0
-        width: 32
-        height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8234b492cd6d55640b2d9b1a6ca93b69
-      internalID: -921434590
+      spriteID: f9c06317d87c4c54ca597d8b21208f69
+      internalID: -403463888
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle-Sheet_4
+      name: Attack1Boss-Sheet_3
       rect:
         serializedVersion: 2
-        x: 128
+        x: 144
         y: 0
-        width: 32
-        height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 27cadadaa5bf2ff44a222878afdf5f58
-      internalID: 371949470
+      spriteID: eaff781f90efcf94ba78b6eaf92c7a3b
+      internalID: 1742229639
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle-Sheet_5
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 0
-        width: 32
-        height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 50e523589b36d29478f9018cf99798af
-      internalID: 231555084
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Idle-Sheet_6
+      name: Attack1Boss-Sheet_4
       rect:
         serializedVersion: 2
         x: 192
         y: 0
-        width: 32
-        height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cc3357af3c7b2534cb223498010e0e51
-      internalID: -1934216973
+      spriteID: 53a9816e50901a547a99c13cba5282bc
+      internalID: 1745264908
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle-Sheet_7
+      name: Attack1Boss-Sheet_5
       rect:
         serializedVersion: 2
-        x: 224
+        x: 240
         y: 0
-        width: 32
-        height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3f4cf54aba2729049b4c751cb26ce4f9
-      internalID: -2024549414
+      spriteID: d9c07d01d16531b4daaefd7f2cd092bc
+      internalID: -1991086809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack1Boss-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6de9ca96f965d3941a267b21a9eb096b
+      internalID: -1432002842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack1Boss-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49f7faea0a3847c4aa1565a7a2b0df53
+      internalID: -824994484
       vertices: []
       indices: 
       edges: []
@@ -283,14 +283,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Idle-Sheet_1: -618698661
-      Idle-Sheet_7: -2024549414
-      Idle-Sheet_0: -762278078
-      Idle-Sheet_6: -1934216973
-      Idle-Sheet_3: -921434590
-      Idle-Sheet_4: 371949470
-      Idle-Sheet_5: 231555084
-      Idle-Sheet_2: -1553328485
+      Attack1Boss-Sheet_0: -292591205
+      Attack1Boss-Sheet_1: 1430547414
+      Attack1Boss-Sheet_2: -403463888
+      Attack1Boss-Sheet_6: -1432002842
+      Attack1Boss-Sheet_4: 1745264908
+      Attack1Boss-Sheet_3: 1742229639
+      Attack1Boss-Sheet_5: -1991086809
+      Attack1Boss-Sheet_7: -824994484
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

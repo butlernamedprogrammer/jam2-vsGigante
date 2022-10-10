@@ -79,13 +79,7 @@ public class PlayerMovement : MonoBehaviour
                 body.velocity = new Vector2(maxSpeed * movSign, body.velocity.y);
             }
         }
-        if (!grChecker.IsOnGround() && body.velocity.y <= 0)
-        {
-            body.velocity = new Vector2(body.velocity.x, body.velocity.y - fallingSpeedMod);
-        }
-        else
-        {
-        }
+
 
     }
     private void Jump()
