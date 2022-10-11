@@ -3,13 +3,13 @@ using UnityEngine;
 public class Boss : MonoBehaviour
 {
     [SerializeField]
-    float maxHealth;
+    int maxHealth;
     [SerializeField]
     GameObject attackCtrl;
     [SerializeField]
     Hitbox hitbox;
     Animator anim;
-    private float currentHealth;
+    private int currentHealth;
 
     public bool isActive;
     // Start is called before the first frame update
@@ -38,12 +38,12 @@ public class Boss : MonoBehaviour
         attackCtrl.SetActive(true);
     }
 
-    public void CheckHitbox()
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (hitbox.CheckHurt())
+        if (collision.gameObject.tag.Contains("Player"))
         {
-            currentHealth -= 1f;
+            currentHealth -= 1;
         }
     }
-    
+
 }

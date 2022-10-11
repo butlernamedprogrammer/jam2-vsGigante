@@ -19,9 +19,7 @@ public class AttackController : MonoBehaviour
     GameObject smashAttack;
     [SerializeField]
     GameObject swingAttack;
-    [SerializeField]
-    ProjectileGenerator projectileGenerator;
-    Animator anim;
+    private Animator anim;
     BossAttack currentAttack;
 
 

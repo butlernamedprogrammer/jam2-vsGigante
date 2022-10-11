@@ -11,8 +11,11 @@ public class BulletInfo : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        
+        if (collision.gameObject.tag.Contains("Boss") || collision.gameObject.tag.Contains("Default") || collision.gameObject.tag.Contains("Player") || collision.gameObject.tag.Contains("Level"))
+        {
+            Destroy(this.gameObject);
+        }
     }
 }

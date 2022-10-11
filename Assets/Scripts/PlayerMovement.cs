@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [SerializeField]
+    int maxHealth;
     [SerializeField]
     float movementSpeed;
     [SerializeField]
@@ -21,16 +24,18 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 movementInput;
     private Rigidbody2D body;
     private SpriteRenderer spr;
-    public bool eatingRange;
-    public bool isEating;
     private bool wantsToJump;
     private bool wantsToShoot;
     private Vector2 lookingDir;
+    private int currentHealth;
+    private bool isAlive;
     // Start is called before the first frame update
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
         spr = GetComponent<SpriteRenderer>();
+        currentHealth = maxHealth;
+        isAlive = true;
     }
 
     // Update is called once per frame
@@ -53,14 +58,19 @@ public class PlayerMovement : MonoBehaviour
         {
             wantsToShoot = true;
         }
+        if (isAlive)
         CharFlip();
     }
 
     private void FixedUpdate()
     {
-        Move();
-        Jump();
-        Shoot();
+        if (isAlive)
+        {
+            Move();
+            Jump();
+            Shoot();
+        }
+        
     }
 
     private void Move()
@@ -117,5 +127,26 @@ public class PlayerMovement : MonoBehaviour
             wantsToShoot = false;
         }
 
+    }
+
+    public void GetHurt()
+    {
+        currentHealth -= 1;
+        if (currentHealth <= 0)
+        {
+            isAlive = false;
+        }
+    }
+
+    public int GetHealth()
+    {
+        return currentHealth;
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag.Contains("Boss"))
+        {
+            GetHurt();
+        }
     }
 }
