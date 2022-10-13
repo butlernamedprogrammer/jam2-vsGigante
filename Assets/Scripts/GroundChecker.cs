@@ -51,8 +51,9 @@ public class GroundChecker : MonoBehaviour
     }
     public bool CanJump()
     {
-        if (onGround && coyoteTimeLeft > 0)
+        if (coyoteTimeLeft > 0)
         {
+            coyoteTimeLeft = 0;
             return true;
         }
         else

@@ -12,24 +12,25 @@ public class HealthIndicator : MonoBehaviour
     [SerializeField]
     public PlayerMovement player;
 
+    private void Start()
+    {
+
+    }
     // Update is called once per frame
     private void Update()
     {
         float playerHealth = player.GetHealth();
-        if (playerHealth != 0)
+
+        for (int i = 0; i < hearts.Length; i++)
         {
-            for (int i = 0; i < hearts.Length; i++)
+            if (i < playerHealth)
             {
-                if (i <= playerHealth - 1)
-                {
-                    hearts[i].enabled = true;
-                }
-                else
-                {
-                    hearts[i].enabled = false;
-                }
+                hearts[i].enabled = true;
+            }
+            else
+            {
+                hearts[i].enabled = false;
             }
         }
-
     }
 }

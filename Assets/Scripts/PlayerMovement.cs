@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEngine.InputSystem;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [Header("Player Parameters")]
     [SerializeField]
     int maxHealth;
     [SerializeField]
@@ -18,22 +20,30 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     float decelSpeed;
     [SerializeField]
+    float invincibilityTimer;
+    [Header("Helpers")]
+    [SerializeField]
     GroundChecker grChecker;
     [SerializeField]
     PlayerShooter shootingObject;
+    [SerializeField]
+    AudioSFX sfx;
     private Vector2 movementInput;
     private Rigidbody2D body;
     private SpriteRenderer spr;
+    private Animator anim;
     private bool wantsToJump;
     private bool wantsToShoot;
     private Vector2 lookingDir;
     private int currentHealth;
     private bool isAlive;
+    private float nextTimeVincible;
     // Start is called before the first frame update
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
         spr = GetComponent<SpriteRenderer>();
+        anim = GetComponent<Animator>();
         currentHealth = maxHealth;
         isAlive = true;
     }
@@ -41,7 +51,6 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        movementInput = new Vector2(Input.GetAxis("Horizontal"), 0);
         if (movementInput.x < 0)
         {
             lookingDir = Vector2.left;
@@ -50,16 +59,8 @@ public class PlayerMovement : MonoBehaviour
         {
             lookingDir = Vector2.right;
         }
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            wantsToJump = true;
-        }
-        if (Input.GetKeyDown(KeyCode.J))
-        {
-            wantsToShoot = true;
-        }
         if (isAlive)
-        CharFlip();
+            CharFlip();
     }
 
     private void FixedUpdate()
@@ -68,31 +69,48 @@ public class PlayerMovement : MonoBehaviour
         {
             Move();
             Jump();
-            Shoot();
+            //Shoot();
         }
-        
+        ToAnimator();
     }
 
-    private void Move()
+    public void Move()
     {
+        Vector2 auxBulletDir = Vector2.zero;
         if (movementInput.x == 0)
         {
-            //body.velocity = new Vector2(Mathf.Lerp(body.velocity.x, 0, decelSpeed * Time.deltaTime), body.velocity.y);
             body.velocity = new Vector2(0, body.velocity.y);
+            auxBulletDir.x = lookingDir.x;
+            anim.SetFloat("BulletDirX", lookingDir.x);
         }
         else
         {
-            body.AddForce(movementInput * movementSpeed, ForceMode2D.Force);
+            Vector2 auxInput = new Vector2(movementInput.x, 0f);
+            body.AddForce(auxInput * movementSpeed, ForceMode2D.Force);
             if (Mathf.Abs(body.velocity.x) > maxSpeed)
             {
                 float movSign = body.velocity.x / Mathf.Abs(body.velocity.x);
                 body.velocity = new Vector2(maxSpeed * movSign, body.velocity.y);
             }
+            if (movementInput.y <= 0.5f)
+            {
+                auxBulletDir.y = 0f;
+            }
+            else
+            {
+                auxBulletDir.y = 0.5f;
+            }
+            auxBulletDir.x = auxInput.x;
+            anim.SetFloat("BulletDirX", auxBulletDir.x);
+            anim.SetFloat("BulletDirY", auxBulletDir.y);
+            shootingObject.ChangeBulletDir(auxBulletDir);
         }
+        anim.SetFloat("BulletDirY", auxBulletDir.y);
+        shootingObject.ChangeBulletDir(auxBulletDir);
     }
     private void Jump()
     {
-        if (wantsToJump && grChecker.IsOnGround())
+        if (wantsToJump && grChecker.CanJump())
         {
             body.AddForce(jumpForce * Vector2.up, ForceMode2D.Impulse);
             wantsToJump = false;
@@ -107,6 +125,10 @@ public class PlayerMovement : MonoBehaviour
             if (shootingObject.transform.localPosition.x > 0)
             {
                 shootingObject.transform.localPosition = new Vector2(shootingObject.transform.localPosition.x * -1, shootingObject.transform.localPosition.y);
+                if (shootingObject.transform.localScale.x > 0)
+                {
+                    shootingObject.transform.localScale = new Vector2(shootingObject.transform.localScale.x * -1f, shootingObject.transform.localPosition.y);
+                }
             }
         }
         else
@@ -115,16 +137,35 @@ public class PlayerMovement : MonoBehaviour
             if (shootingObject.transform.localPosition.x < 0)
             {
                 shootingObject.transform.localPosition = new Vector2(shootingObject.transform.localPosition.x * -1, shootingObject.transform.localPosition.y);
+                if (shootingObject.transform.localScale.x < 0)
+                {
+                    shootingObject.transform.localScale = new Vector2(shootingObject.transform.localScale.x * -1f, shootingObject.transform.localPosition.y);
+                }
             }
         }
     }
 
-    private void Shoot()
+    public void Shoot()
     {
-        if (wantsToShoot)
+        shootingObject.Shoot();
+        anim.SetBool("WantsToShoot", false);
+
+    }
+
+    public void GetMovementInput(InputAction.CallbackContext context)
+    {
+        movementInput = context.ReadValue<Vector2>();
+    }
+    public void GetJumpInput(InputAction.CallbackContext context)
+    {
+        wantsToJump = context.ReadValueAsButton();
+    }
+    public void GetShootInput(InputAction.CallbackContext context)
+    {
+        if (context.ReadValueAsButton())
         {
-            shootingObject.Shoot();
-            wantsToShoot = false;
+            anim.Play("shootIntro");
+            anim.SetBool("WantsToShoot",true);
         }
 
     }
@@ -132,9 +173,14 @@ public class PlayerMovement : MonoBehaviour
     public void GetHurt()
     {
         currentHealth -= 1;
+        nextTimeVincible = Time.unscaledTime + invincibilityTimer;
+
+
         if (currentHealth <= 0)
         {
             isAlive = false;
+            nextTimeVincible = Time.unscaledDeltaTime + 9999f;
+            anim.Play("Death");
         }
     }
 
@@ -146,7 +192,20 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.gameObject.tag.Contains("Boss"))
         {
-            GetHurt();
+            if (Time.unscaledTime > nextTimeVincible)
+                GetHurt();
         }
+    }
+
+    private void ToAnimator()
+    {
+        anim.SetFloat("VelocityX", Mathf.Abs(body.velocity.x));
+        anim.SetFloat("VelocityY", body.velocity.y);
+        anim.SetBool("OnGround", grChecker.CanJump());
+    }
+
+    public void PlayAudio()
+    {
+        sfx.PlayCurrentClipOneShot();
     }
 }

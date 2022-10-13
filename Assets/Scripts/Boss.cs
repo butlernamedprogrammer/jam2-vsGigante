@@ -8,7 +8,10 @@ public class Boss : MonoBehaviour
     GameObject attackCtrl;
     [SerializeField]
     Hitbox hitbox;
-    Animator anim;
+    [SerializeField]
+    Animator firstAnim;
+    [SerializeField]
+    Animator secondAnim;
     private int currentHealth;
 
     public bool isActive;
@@ -16,9 +19,7 @@ public class Boss : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
-        TryGetComponent<Animator>(out anim);
         isActive = false;
-        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame

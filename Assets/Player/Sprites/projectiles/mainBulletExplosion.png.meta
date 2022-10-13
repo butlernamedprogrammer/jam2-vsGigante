@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 156b7dcc1fb8f6a48875e6781c66928d
+guid: 8ba3ed9d0e468c74e9edb7c66e2281e0
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 64
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -70,7 +70,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -105,169 +105,211 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Idle-Sheet_0
+      name: mainBulletExplosion_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 32
         height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 10c59f8f30b488b4f97b770d75016cba
-      internalID: -762278078
+      spriteID: a991db32c4b133944af85c933036a5df
+      internalID: 1256662585
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle-Sheet_1
+      name: mainBulletExplosion_1
       rect:
         serializedVersion: 2
         x: 32
         y: 0
         width: 32
         height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 34fe70e56d307174da64d1efb42a0ad6
-      internalID: -618698661
+      spriteID: d9635bdd5aa020e4d851bdd3f6f66dd4
+      internalID: 907061698
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle-Sheet_2
+      name: mainBulletExplosion_2
       rect:
         serializedVersion: 2
         x: 64
         y: 0
         width: 32
         height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 52fd229da4dea16438fab6267a2d4b70
-      internalID: -1553328485
+      spriteID: a38b121731678d14e8bdff86ee6a4820
+      internalID: 379614057
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle-Sheet_3
+      name: mainBulletExplosion_3
       rect:
         serializedVersion: 2
         x: 96
         y: 0
         width: 32
         height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8234b492cd6d55640b2d9b1a6ca93b69
-      internalID: -921434590
+      spriteID: f039a6052f8160648aa0a78e9b230425
+      internalID: -2090856728
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle-Sheet_4
+      name: mainBulletExplosion_4
       rect:
         serializedVersion: 2
         x: 128
         y: 0
         width: 32
         height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 27cadadaa5bf2ff44a222878afdf5f58
-      internalID: 371949470
+      spriteID: 4c2deb2baac3d0e4994309611754c8c3
+      internalID: 2031887394
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle-Sheet_5
+      name: mainBulletExplosion_5
       rect:
         serializedVersion: 2
         x: 160
         y: 0
         width: 32
         height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 50e523589b36d29478f9018cf99798af
-      internalID: 231555084
+      spriteID: 537d3cdb559c29041be517e6840fcd6f
+      internalID: -961028951
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle-Sheet_6
+      name: mainBulletExplosion_6
       rect:
         serializedVersion: 2
         x: 192
         y: 0
         width: 32
         height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cc3357af3c7b2534cb223498010e0e51
-      internalID: -1934216973
+      spriteID: c94ab5bb71e9a4e47892d71f5d89d649
+      internalID: -725295475
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle-Sheet_7
+      name: mainBulletExplosion_7
       rect:
         serializedVersion: 2
         x: 224
         y: 0
         width: 32
         height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3f4cf54aba2729049b4c751cb26ce4f9
-      internalID: -2024549414
+      spriteID: ecf02a591d80d844b9df3615a12049d4
+      internalID: -1113342982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainBulletExplosion_8
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef91d1a7cd5bc754089285fdd760ce3c
+      internalID: -1305662537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainBulletExplosion_9
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b7140ff6f5cf854db7ef4278d62ce3e
+      internalID: 1333957458
       vertices: []
       indices: 
       edges: []
@@ -283,14 +325,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Idle-Sheet_1: -618698661
-      Idle-Sheet_7: -2024549414
-      Idle-Sheet_0: -762278078
-      Idle-Sheet_6: -1934216973
-      Idle-Sheet_3: -921434590
-      Idle-Sheet_4: 371949470
-      Idle-Sheet_5: 231555084
-      Idle-Sheet_2: -1553328485
+      mainBulletExplosion_8: -1305662537
+      mainBulletExplosion_1: 907061698
+      mainBulletExplosion_7: -1113342982
+      mainBulletExplosion_3: -2090856728
+      mainBulletExplosion_0: 1256662585
+      mainBulletExplosion_5: -961028951
+      mainBulletExplosion_6: -725295475
+      mainBulletExplosion_9: 1333957458
+      mainBulletExplosion_4: 2031887394
+      mainBulletExplosion_2: 379614057
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

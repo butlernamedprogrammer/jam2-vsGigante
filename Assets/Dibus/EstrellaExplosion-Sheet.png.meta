@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a4f387b4742cda849a789b97f1aface7
+guid: d53b44388ffc74a4892f4d04951aa7d4
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -68,11 +68,11 @@ TextureImporter:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
-    resizeAlgorithm: 1
+    resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 100
-    crunchedCompression: 1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
@@ -105,175 +105,127 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: IdleBoss-Sheet_0
+      name: EstrellaExplosion-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 48
-        height: 48
+        width: 21
+        height: 21
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 7, y: -7}
-        - {x: 13, y: -1}
-        - {x: 14, y: -1}
-        - {x: 24, y: 8}
-        - {x: 24, y: 10}
-        - {x: 21, y: 13}
-        - {x: 18, y: 13}
-        - {x: 12, y: 7}
-        - {x: 12, y: 8}
-        - {x: 14, y: 11}
-        - {x: 14, y: 14}
-        - {x: 13, y: 15}
-        - {x: 13, y: 17}
-        - {x: 6, y: 24}
-        - {x: 3, y: 24}
-        - {x: 2, y: 22}
-        - {x: 0, y: 24}
-        - {x: -3, y: 24}
-        - {x: -5, y: 22}
-        - {x: -6, y: 24}
-        - {x: -9, y: 24}
-        - {x: -16, y: 18}
-        - {x: -17, y: 15}
-        - {x: -17, y: 11}
-        - {x: -16, y: 10}
-        - {x: -16, y: 9}
-        - {x: -17, y: 10}
-        - {x: -20, y: 9}
-        - {x: -20, y: 4}
-        - {x: -19, y: 1}
-        - {x: -15, y: -2}
-        - {x: -14, y: -2}
-        - {x: -11, y: -5}
-        - {x: -9, y: -5}
-        - {x: -12, y: -9}
-        - {x: -12, y: -14}
-        - {x: -11, y: -16}
-        - {x: -15, y: -20}
-        - {x: -15, y: -22}
-        - {x: -12, y: -23}
-        - {x: -8, y: -20}
-        - {x: -7, y: -20}
-        - {x: -6, y: -21}
-        - {x: -7, y: -24}
-        - {x: 5, y: -24}
-        - {x: 5, y: -20}
-        - {x: 4, y: -18}
-        - {x: 7, y: -15}
-      physicsShape: []
-      tessellationDetail: 1
-      bones: []
-      spriteID: 7a5ee849ec7d07341a74819c12c2ef70
-      internalID: 169128049
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: IdleBoss-Sheet_1
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 0
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b502be6a9cb33ef4a8223f330562067e
-      internalID: -1211435244
+      spriteID: 6d88a49bb81135d4fa4850b0772af163
+      internalID: -39253487
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IdleBoss-Sheet_2
+      name: EstrellaExplosion-Sheet_1
       rect:
         serializedVersion: 2
-        x: 96
+        x: 21
         y: 0
-        width: 48
-        height: 48
+        width: 21
+        height: 21
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a3bc8229c61f38846a8f2ae0871a659c
-      internalID: -46714024
+      spriteID: e2ec4e93dd531874aafb1e96761c1835
+      internalID: -1695680506
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IdleBoss-Sheet_3
+      name: EstrellaExplosion-Sheet_2
       rect:
         serializedVersion: 2
-        x: 144
+        x: 42
         y: 0
-        width: 48
-        height: 48
+        width: 21
+        height: 21
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 63a6459b042c5444b9843b1a8ab4be60
-      internalID: 76818033
+      spriteID: c39f9b383741fb7449a56c81818a09ea
+      internalID: -1992106077
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IdleBoss-Sheet_4
+      name: EstrellaExplosion-Sheet_3
       rect:
         serializedVersion: 2
-        x: 192
+        x: 63
         y: 0
-        width: 48
-        height: 48
+        width: 21
+        height: 21
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3d99a8d90c7fff14a82e663a1ab6f61c
-      internalID: 1738121132
+      spriteID: fd5e599b3b50aaa4fbca1e2c1afce52b
+      internalID: -189362702
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IdleBoss-Sheet_5
+      name: EstrellaExplosion-Sheet_4
       rect:
         serializedVersion: 2
-        x: 240
+        x: 84
         y: 0
-        width: 48
-        height: 48
+        width: 21
+        height: 21
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9c1f8c701ce61a44788776412d1560e3
-      internalID: -921722027
+      spriteID: 57ed7d039ddf17b4881a8ba3a987068b
+      internalID: 122990490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EstrellaExplosion-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 0
+        width: 21
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92a02b5a8738e4248a47391ade5d1b1a
+      internalID: -1564239424
       vertices: []
       indices: 
       edges: []
@@ -289,12 +241,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      IdleBoss-Sheet_5: -921722027
-      IdleBoss-Sheet_3: 76818033
-      IdleBoss-Sheet_4: 1738121132
-      IdleBoss-Sheet_2: -46714024
-      IdleBoss-Sheet_1: -1211435244
-      IdleBoss-Sheet_0: 169128049
+      EstrellaExplosion-Sheet_1: -1695680506
+      EstrellaExplosion-Sheet_4: 122990490
+      EstrellaExplosion-Sheet_5: -1564239424
+      EstrellaExplosion-Sheet_3: -189362702
+      EstrellaExplosion-Sheet_2: -1992106077
+      EstrellaExplosion-Sheet_0: -39253487
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
