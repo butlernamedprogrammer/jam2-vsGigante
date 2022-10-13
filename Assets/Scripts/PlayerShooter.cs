@@ -12,7 +12,6 @@ public class PlayerShooter : MonoBehaviour
 
     public void Shoot()
     {
-        Debug.Log("Pium");
         float angle = Mathf.Atan2(bulletDir.y, bulletDir.x) * Mathf.Rad2Deg;
         Quaternion bulletRotation = Quaternion.AngleAxis(angle, Vector3.forward);
         GameObject auxGameObj = Instantiate(bullet, transform.position, bulletRotation);
