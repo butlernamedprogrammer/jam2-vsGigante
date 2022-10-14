@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine.InputSystem;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -205,5 +206,9 @@ public class PlayerMovement : MonoBehaviour
     public void PlayAudio()
     {
         sfx.PlayCurrentClipOneShot();
+    }
+    public void ReturnToMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 }

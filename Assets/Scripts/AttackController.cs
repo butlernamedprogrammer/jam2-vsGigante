@@ -34,8 +34,7 @@ public class AttackController : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
-        Debug.Log(minScreenPos);
-        Debug.Log(maxScreenPos);
+
     }
 
     public void ToAnimator()

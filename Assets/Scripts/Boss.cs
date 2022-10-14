@@ -1,5 +1,6 @@
-using UnityEditor.Animations;
+using UnityEngine.Animations;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Boss : MonoBehaviour
 {
@@ -12,15 +13,18 @@ public class Boss : MonoBehaviour
     [SerializeField]
     Hitbox hitbox;
     [SerializeField]
-    AnimatorController firstAnim;
+    RuntimeAnimatorController firstAnim;
     [SerializeField]
-    AnimatorController secondAnim;
+    RuntimeAnimatorController secondAnim;
     [SerializeField]
     AudioSFX sfx;
     [SerializeField]
     PlayerMovement player;
     [SerializeField]
+
     bool change;
+    [SerializeField]
+    GameObject victoryScreen;
 
     public bool dead;
     private int currentHealth;
@@ -85,5 +89,15 @@ public class Boss : MonoBehaviour
     public void SwitchPlayerMovement()
     {
         player.enabled = !player.enabled;
+    }
+
+    public void ActivateVictoryScreen()
+    {
+        victoryScreen.SetActive(!victoryScreen.activeSelf);
+    }
+
+    public void ReturnToMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 }

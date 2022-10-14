@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Pause : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class Pause : MonoBehaviour
     public bool isOnPause;
     float normalTimeScale;
     public GameObject pauseScreen;
+    public PlayerMovement player;
     void Start()
     {
         normalTimeScale = Time.timeScale;
@@ -18,11 +20,22 @@ public class Pause : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            Time.timeScale = isOnPause? normalTimeScale : pauseTimeScale;
+
+    }
+
+    public void CheckPause(InputAction.CallbackContext context)
+    {
+        if (context.ReadValueAsButton())
             isOnPause = !isOnPause;
-            pauseScreen.SetActive(isOnPause);
+            Time.timeScale = isOnPause ? normalTimeScale:pauseTimeScale;
+        pauseScreen.SetActive(!isOnPause);
+        if (isOnPause)
+        {
+            player.enabled = false;
         }
-    }  
+        else
+        {
+            player.enabled = true;
+        }
+    }
 }
