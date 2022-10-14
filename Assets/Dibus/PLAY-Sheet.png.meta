@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a4f387b4742cda849a789b97f1aface7
+guid: a132f4150456b7643984e8dc3bd8cdc1
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -105,13 +105,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: IdleBoss-Sheet_0
+      name: PLAY-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 48
-        height: 48
+        width: 90
+        height: 90
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -119,20 +119,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7a5ee849ec7d07341a74819c12c2ef70
-      internalID: 169128049
+      spriteID: da7e4f72f02f243488e7f37f75b4fe36
+      internalID: 872012569
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IdleBoss-Sheet_1
+      name: PLAY-Sheet_1
       rect:
         serializedVersion: 2
-        x: 48
+        x: 90
         y: 0
-        width: 48
-        height: 48
+        width: 90
+        height: 90
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,20 +140,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b502be6a9cb33ef4a8223f330562067e
-      internalID: -1211435244
+      spriteID: 759e7a77aa1c7a5418d6bebb15c97bf3
+      internalID: 1423935629
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IdleBoss-Sheet_2
+      name: PLAY-Sheet_2
       rect:
         serializedVersion: 2
-        x: 96
+        x: 180
         y: 0
-        width: 48
-        height: 48
+        width: 90
+        height: 90
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -161,20 +161,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a3bc8229c61f38846a8f2ae0871a659c
-      internalID: -46714024
+      spriteID: cb1bd4f9efe3ee74f9e9aa158b8c4ac1
+      internalID: -1903475863
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IdleBoss-Sheet_3
+      name: PLAY-Sheet_3
       rect:
         serializedVersion: 2
-        x: 144
+        x: 270
         y: 0
-        width: 48
-        height: 48
+        width: 90
+        height: 90
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -182,20 +182,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 63a6459b042c5444b9843b1a8ab4be60
-      internalID: 76818033
+      spriteID: 8103737b31f554f4d923e5497ae28436
+      internalID: 1443734829
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IdleBoss-Sheet_4
+      name: PLAY-Sheet_4
       rect:
         serializedVersion: 2
-        x: 192
+        x: 360
         y: 0
-        width: 48
-        height: 48
+        width: 90
+        height: 90
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -203,29 +203,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3d99a8d90c7fff14a82e663a1ab6f61c
-      internalID: 1738121132
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: IdleBoss-Sheet_5
-      rect:
-        serializedVersion: 2
-        x: 240
-        y: 0
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9c1f8c701ce61a44788776412d1560e3
-      internalID: -921722027
+      spriteID: 09688b6d2ff227243b646706408bfa32
+      internalID: 1338356593
       vertices: []
       indices: 
       edges: []
@@ -241,12 +220,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      IdleBoss-Sheet_5: -921722027
-      IdleBoss-Sheet_3: 76818033
-      IdleBoss-Sheet_4: 1738121132
-      IdleBoss-Sheet_2: -46714024
-      IdleBoss-Sheet_1: -1211435244
-      IdleBoss-Sheet_0: 169128049
+      PLAY-Sheet_1: 1423935629
+      PLAY-Sheet_0: 872012569
+      PLAY-Sheet_2: -1903475863
+      PLAY-Sheet_3: 1443734829
+      PLAY-Sheet_4: 1338356593
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
