@@ -35,7 +35,6 @@ public class ProjectileGenerator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
     }
 
     public void Spawn()
@@ -60,7 +59,7 @@ public class ProjectileGenerator : MonoBehaviour
                 auxPos = GetRandomPos();
                 break;
         }
-        Vector3 bulletDir = (player.transform.position - auxPos).normalized;
+        Vector3 bulletDir = (player.transform.position + Vector3.up * 0.25f - auxPos).normalized;
         float angle = Mathf.Atan2(bulletDir.y, bulletDir.x) * Mathf.Rad2Deg;
         Quaternion bulletRotation = Quaternion.AngleAxis(angle, Vector3.forward);
         GameObject auxGameObj = Instantiate(spawningGameobject[currentProjectile], auxPos, bulletRotation);

@@ -148,7 +148,6 @@ public class PlayerMovement : MonoBehaviour
     public void Shoot()
     {
         shootingObject.Shoot();
-        anim.SetBool("WantsToShoot", false);
 
     }
 
@@ -165,7 +164,6 @@ public class PlayerMovement : MonoBehaviour
         if (context.ReadValueAsButton())
         {
             anim.Play("shootIntro");
-            anim.SetBool("WantsToShoot",true);
         }
 
     }

@@ -1,3 +1,4 @@
+using UnityEditor.Animations;
 using UnityEngine;
 
 public class Boss : MonoBehaviour
@@ -11,12 +12,17 @@ public class Boss : MonoBehaviour
     [SerializeField]
     Hitbox hitbox;
     [SerializeField]
-    Animator firstAnim;
+    AnimatorController firstAnim;
     [SerializeField]
-    Animator secondAnim;
+    AnimatorController secondAnim;
+    [SerializeField]
+    AudioSFX sfx;
+    [SerializeField]
+    PlayerMovement player;
     [SerializeField]
     bool change;
-    public bool die;
+
+    public bool dead;
     private int currentHealth;
     private Animator anim;
 
@@ -28,19 +34,22 @@ public class Boss : MonoBehaviour
         currentHealth = maxHealth;
         isActive = false;
         change = false;
-        die = false;
+        dead = false;
+        anim.runtimeAnimatorController = (RuntimeAnimatorController)firstAnim;
     }
 
     // Update is called once per frame
     public void Update()
     {
-        if (maxHealth - currentHealth == healthLossBeforeChange)
+        if (maxHealth - currentHealth == healthLossBeforeChange && change == false)
         {
             change = true;
+            anim.SetBool("Dead", true);
         }
         if (currentHealth <= 0)
         {
-            die = true;
+            dead = true;
+            anim.SetBool("Dead", true);
         }
     }
 
@@ -65,8 +74,16 @@ public class Boss : MonoBehaviour
 
     public void ChangeAnimator()
     {
-        anim = secondAnim;
+        anim.runtimeAnimatorController = (RuntimeAnimatorController)secondAnim;
     }
 
+    public void PlayAudio()
+    {
+        sfx.PlayCurrentClipOneShot();
+    }
 
+    public void SwitchPlayerMovement()
+    {
+        player.enabled = !player.enabled;
+    }
 }

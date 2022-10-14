@@ -31,4 +31,10 @@ public class AudioSFX : MonoBehaviour
     {
         audioSrc.PlayOneShot(clips[currentClip]);
     }
+
+    public void PlayCurrentClip()
+    {
+        audioSrc.clip = clips[currentClip];
+        audioSrc.Play();
+    }
 }

@@ -25,8 +25,8 @@ public class GroundChecker : MonoBehaviour
     {
         if (other.tag.Contains("Level"))
         {
-            if(coyoteTimeEnabled)
-            coyoteTimeLeft = coyoteThreshold;
+            if (coyoteTimeEnabled)
+                coyoteTimeLeft = coyoteThreshold;
             onGround = true;
         }
     }
@@ -34,8 +34,8 @@ public class GroundChecker : MonoBehaviour
     {
         if (collision.tag.Contains("Level"))
         {
-            if(coyoteTimeEnabled)
-            coyoteTimeLeft = coyoteThreshold;
+            if (coyoteTimeEnabled)
+                coyoteTimeLeft = coyoteThreshold;
             onGround = true;
         }
 
@@ -51,7 +51,7 @@ public class GroundChecker : MonoBehaviour
     }
     public bool CanJump()
     {
-        if (coyoteTimeLeft > 0)
+        if (coyoteTimeLeft > 0 || onGround)
         {
             coyoteTimeLeft = 0;
             return true;

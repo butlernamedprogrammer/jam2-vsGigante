@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8300678383225881462}
   - component: {fileID: 2613669702954363996}
   - component: {fileID: 4226203849817259964}
-  m_Layer: 3
+  m_Layer: 8
   m_Name: BulletTestAlly
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -147,7 +147,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4b6abbb4599b924293b91ebacf6da74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosion: {fileID: 0}
 --- !u!95 &4226203849817259964
 Animator:
   serializedVersion: 4

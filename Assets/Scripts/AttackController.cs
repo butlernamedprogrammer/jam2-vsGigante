@@ -34,7 +34,8 @@ public class AttackController : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
-
+        Debug.Log(minScreenPos);
+        Debug.Log(maxScreenPos);
     }
 
     public void ToAnimator()
@@ -52,7 +53,7 @@ public class AttackController : MonoBehaviour
             case 1:
                 swingAttack.transform.position = currentAttack.GetPos();
                 break;
-            case 3:
+            case 2:
 
                 break;
         }
@@ -95,10 +96,10 @@ public class AttackController : MonoBehaviour
                     }
                     break;
                 case AttackType.Swing:
-                    pos = new Vector2(swingFixedX, pos.y + UnityEngine.Random.Range(-1, 2));
-                    if (pos.y < minScreenPos.y + 2)
+                    pos = new Vector2(swingFixedX, pos.y + UnityEngine.Random.Range(-0.25f, 0.25f));
+                    if (pos.y < minScreenPos.y + 0.25f)
                     {
-                        pos = new Vector2(swingFixedX, minScreenPos.y + 2);
+                        pos = new Vector2(swingFixedX, minScreenPos.y + 0.25f);
                     }
                     if (pos.y > maxScreenPos.y)
                     {
